@@ -1,0 +1,75 @@
+﻿@model MVCDemo.Models.EmployeeModel
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+<h2>List of Employee</h2>
+<table style="font-family:Arial">
+    <tr>
+        <td>
+            <b>Employee Id:</b>
+        </td>
+        <td>
+            @Model.Id
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Employee Name:</b>
+        </td>
+        <td>
+            @Model.Name
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Employee Department:</b>
+        </td>
+        <td>
+            @Model.Department
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Employee Salary:</b>
+        </td>
+        <td>
+            @Model.Salary
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Employee Gender:</b>
+        </td>
+        <td>
+            @Model.Gender
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Employee Age:</b>
+        </td>
+        <td>
+            @Model.Age
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Employee Date of joining:</b>
+        </td>
+        <td>
+            @Model.DateOfJoining
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Employee City:</b>
+        </td>
+        <td>
+            @Model.City
+        </td>
+    </tr>
+</table>
+@Html.ActionLink("Back to List", "Index");
+
+

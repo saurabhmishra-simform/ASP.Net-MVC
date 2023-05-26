@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVCDemo.Models.EmployeeModel>
+
+@using MVCDemo.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h3 class="mb-2">@Html.ActionLink("Add Employee", "Create")</h3>
+    <h2 class="text-center"><i><u>Employees List</u></i></h2>
+    <table class="table mt-2">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Department)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Salary)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Gender)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Age)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.DateOfJoining)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.City)</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (EmployeeModel employee in @Model)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(EmpModel => employee.Id)</th>
+                    <td>@Html.DisplayFor(EmpModel => employee.Name)</td>
+                    <td>@Html.DisplayFor(EmpModel => employee.Department)</td>
+                    <td>@Html.DisplayFor(EmpModel => employee.Salary)</td>
+                    <td>@Html.DisplayFor(EmpModel => employee.Gender)</td>
+                    <td>@Html.DisplayFor(EmpModel => employee.Age)</td>
+                    <td>@Html.DisplayFor(EmpModel => employee.DateOfJoining)</td>
+                    <td>@Html.DisplayFor(EmpModel => employee.City)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { @id = employee.Id }) |
+                        @Html.ActionLink("Details", "Details", new { @id = employee.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { @id = employee.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
